@@ -21,19 +21,22 @@ export function JogoDoGalo() {
     }
     return (
       <div className="flex flex-col mt-50 justify-center h-screen bg-pink-200">
+        <h1 className="flex justify-center text-4xl font-bold uppercase pb-12 text-pink-600 ">Jogo do Galo</h1>
+
         <div className="flex justify-center mt-2 text-gray-600 m-5">
           {verificarFimDoJogo(jogo) ? (
             <p>
               {verificarVencedor(jogo)
                 ? `${verificarVencedor(jogo)} venceu!`
-                : "Empate."}  
+                : "Empate."}
             </p>
           ) : (
             <p className="text-gray-900">Jogador atual: {jogo.jogadorAtual}</p>
           )}
         </div>
         <div>
-          {jogo.tabuleiro.map((line, i) => { //map transforma oq está dentro do array em no que eu quiser e retornar em um novo array
+          {jogo.tabuleiro.map((line, i) => {
+            //map transforma oq está dentro do array em no que eu quiser e retornar em um novo array
             return (
               <div
                 className="flex justify-center mt-100 w-auto text-gray-600 "
